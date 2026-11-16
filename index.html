@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naminoricake | 自己紹介</title>
+  <style>
+    :root {
+      --bg-color: #f8fafc;
+      --surface-color: #ffffff;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --accent-color: #0284c7;
+      --accent-light: #e0f2fe;
+      --border-color: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", "Meiryo", sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+
+    header {
+      background-color: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: var(--accent-light);
+      color: var(--accent-color);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.25rem 0.85rem;
+      border-radius: 999px;
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-size: clamp(1.75rem, 5vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: var(--text-primary);
+    }
+
+    section {
+      background-color: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      padding-bottom: 0.65rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 2px solid var(--accent-color);
+      display: inline-block;
+    }
+
+    .award-box {
+      background-color: var(--accent-light);
+      border-left: 4px solid var(--accent-color);
+      padding: 1rem 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .story-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .story-item {
+      padding-left: 1rem;
+      border-left: 2px solid var(--border-color);
+    }
+
+    .story-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent-color);
+      margin-bottom: 0.25rem;
+    }
+
+    p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2.5rem;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.5rem 1rem 3rem;
+      }
+
+      header,
+      section {
+        padding: 1.5rem 1.25rem;
+      }
+
+      h2 {
+        font-size: 1.15rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="badge">大学1年生</span>
+      <h1>Naminoricake</h1>
+    </header>
+
+    <main>
+      <section>
+        <h2>実績・取り組み</h2>
+        <div class="award-box">
+          「ベンチャー・カップCHIBA」ビジネスアイデア部門 グランプリ受賞
+        </div>
+        <ul class="story-list">
+          <li class="story-item">
+            <span class="span story-label">きっかけ・テーマ</span>
+            <p>高校の総合探求の授業の一環として、ビジネスアイデアを競う発表会「ベンチャー・カップCHIBA」に参加し、プラスチックの環境問題を解決する自販機型の機械というアイデアを発表しました。</p>
+          </li>
+          <li class="story-item">
+            <span class="story-label">課題と改善のプロセス</span>
+            <p>中間発表の際、内容が具体的でなかったため説得力がないという指摘を受けました。そこで、プランやアイデアの説得力を高めるため、どれくらいのプラスチックが削減できそうか、飲料の調達にどれくらいお金がかかるかなどの試算を繰り返しました。</p>
+          </li>
+          <li class="story-item">
+            <span class="story-label">結果</span>
+            <p>数値に基づく具体性を高めた結果、「ベンチャー・カップCHIBA」の「ビジネスアイデア部門」でグランプリを獲得することができました。</p>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; Naminoricake</p>
+    </footer>
+  </div>
+</body>
+</html>
