@@ -6,12 +6,13 @@
   <title>Naminoricake | 自己紹介</title>
   <style>
     :root {
-      --bg-color: #f8fafc;
+      --bg-color: #f4f8fb;
       --surface-color: #ffffff;
-      --text-primary: #0f172a;
-      --text-secondary: #475569;
-      --accent-color: #0284c7;
-      --accent-light: #e0f2fe;
+      --primary-color: #0284c7;
+      --primary-dark: #0369a1;
+      --accent-color: #0d9488;
+      --text-main: #1e293b;
+      --text-muted: #475569;
       --border-color: #e2e8f0;
     }
 
@@ -21,162 +22,353 @@
       padding: 0;
     }
 
-    body {
-      font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", "Meiryo", sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-primary);
-      line-height: 1.75;
-      -webkit-font-smoothing: antialiased;
+    html {
+      scroll-behavior: smooth;
     }
 
-    .container {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 2.5rem 1.25rem 4rem;
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.75;
     }
 
     header {
       background-color: var(--surface-color);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 2.5rem 2rem;
-      text-align: center;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
-    .badge {
-      display: inline-block;
-      background-color: var(--accent-light);
-      color: var(--accent-color);
-      font-size: 0.85rem;
+    .header-inner {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .site-title {
+      font-size: 1.25rem;
       font-weight: 700;
-      padding: 0.25rem 0.85rem;
+      color: var(--primary-color);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.25rem 0.4rem;
+      border-radius: 4px;
+      transition: color 0.2s, background-color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--primary-color);
+      background-color: #e0f2fe;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0284c7 0%, #0d9488 100%);
+      color: #ffffff;
+      padding: 4.5rem 1.5rem;
+      text-align: center;
+    }
+
+    .hero-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 0.3rem 0.9rem;
       border-radius: 999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
       margin-bottom: 0.75rem;
     }
 
-    h1 {
-      font-size: clamp(1.75rem, 5vw, 2.5rem);
-      font-weight: 800;
-      letter-spacing: 0.02em;
-      color: var(--text-primary);
+    .hero p {
+      font-size: 1.05rem;
+      opacity: 0.95;
+    }
+
+    main {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
     }
 
     section {
       background-color: var(--surface-color);
       border: 1px solid var(--border-color);
-      border-radius: 16px;
+      border-radius: 12px;
       padding: 2rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+      scroll-margin-top: 4.5rem;
     }
 
     h2 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      padding-bottom: 0.65rem;
+      font-size: 1.4rem;
+      color: var(--primary-dark);
+      border-left: 4px solid var(--primary-color);
+      padding-left: 0.75rem;
       margin-bottom: 1.25rem;
-      border-bottom: 2px solid var(--accent-color);
-      display: inline-block;
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 0.75rem 1rem;
+      align-items: baseline;
+    }
+
+    .profile-label {
+      font-weight: 700;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .profile-value {
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .timeline-item {
+      border-left: 3px solid #bae6fd;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -7.5px;
+      top: 0.35rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: var(--primary-color);
+    }
+
+    .timeline-item.highlight {
+      border-left-color: var(--accent-color);
+    }
+
+    .timeline-item.highlight::before {
+      background-color: var(--accent-color);
+    }
+
+    .step-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      color: var(--text-main);
     }
 
     .award-box {
-      background-color: var(--accent-light);
-      border-left: 4px solid var(--accent-color);
-      padding: 1rem 1.25rem;
-      border-radius: 0 8px 8px 0;
-      margin-bottom: 1.5rem;
+      margin-top: 1.75rem;
+      background-color: #f0fdfa;
+      border: 1px solid #99f6e4;
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+    }
+
+    .award-title {
       font-weight: 700;
-      color: var(--text-primary);
+      color: #0f766e;
+      font-size: 1.1rem;
+      margin-bottom: 0.35rem;
     }
 
-    .story-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
+    .video-section p {
+      margin-bottom: 1.25rem;
+      color: var(--text-muted);
     }
 
-    .story-item {
-      padding-left: 1rem;
-      border-left: 2px solid var(--border-color);
-    }
-
-    .story-label {
-      display: block;
-      font-size: 0.85rem;
+    .btn-link {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: #ffffff;
+      text-decoration: none;
       font-weight: 700;
-      color: var(--accent-color);
-      margin-bottom: 0.25rem;
+      padding: 0.85rem 1.5rem;
+      border-radius: 8px;
+      transition: background-color 0.2s, transform 0.1s;
     }
 
-    p {
-      color: var(--text-secondary);
-      font-size: 1rem;
+    .btn-link:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-1px);
     }
 
     footer {
       text-align: center;
-      margin-top: 2.5rem;
-      font-size: 0.85rem;
-      color: var(--text-secondary);
+      padding: 2rem 1rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      border-top: 1px solid var(--border-color);
+      background-color: var(--surface-color);
     }
 
     @media (max-width: 600px) {
-      .container {
-        padding: 1.5rem 1rem 3rem;
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
       }
 
-      header,
+      nav ul {
+        gap: 0.75rem;
+      }
+
+      .hero {
+        padding: 3rem 1.25rem;
+      }
+
+      .hero h1 {
+        font-size: 1.85rem;
+      }
+
       section {
         padding: 1.5rem 1.25rem;
       }
 
-      h2 {
-        font-size: 1.15rem;
+      .profile-grid {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
       }
 
-      p {
-        font-size: 0.95rem;
+      .profile-label {
+        margin-top: 0.5rem;
+      }
+
+      .btn-link {
+        display: block;
+        text-align: center;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <span class="badge">大学1年生</span>
-      <h1>Naminoricake</h1>
-    </header>
 
-    <main>
-      <section>
-        <h2>実績・取り組み</h2>
-        <div class="award-box">
-          「ベンチャー・カップCHIBA」ビジネスアイデア部門 グランプリ受賞
-        </div>
-        <ul class="story-list">
-          <li class="story-item">
-            <span class="span story-label">きっかけ・テーマ</span>
-            <p>高校の総合探求の授業の一環として、ビジネスアイデアを競う発表会「ベンチャー・カップCHIBA」に参加し、プラスチックの環境問題を解決する自販機型の機械というアイデアを発表しました。</p>
-          </li>
-          <li class="story-item">
-            <span class="story-label">課題と改善のプロセス</span>
-            <p>中間発表の際、内容が具体的でなかったため説得力がないという指摘を受けました。そこで、プランやアイデアの説得力を高めるため、どれくらいのプラスチックが削減できそうか、飲料の調達にどれくらいお金がかかるかなどの試算を繰り返しました。</p>
-          </li>
-          <li class="story-item">
-            <span class="story-label">結果</span>
-            <p>数値に基づく具体性を高めた結果、「ベンチャー・カップCHIBA」の「ビジネスアイデア部門」でグランプリを獲得することができました。</p>
-          </li>
+  <header>
+    <div class="header-inner">
+      <a href="#top" class="site-title">Naminoricake</a>
+      <nav aria-label="ページ内メニュー">
+        <ul>
+          <li><a href="#profile">プロフィール</a></li>
+          <li><a href="#venture-cup">高校時代の取り組み</a></li>
+          <li><a href="#award">受賞実績</a></li>
+          <li><a href="#link">関連リンク</a></li>
         </ul>
-      </section>
-    </main>
+      </nav>
+    </div>
+  </header>
 
-    <footer>
-      <p>&copy; Naminoricake</p>
-    </footer>
+  <div id="top" class="hero">
+    <div class="hero-inner">
+      <span class="hero-badge">大学1年生</span>
+      <h1>Naminoricake</h1>
+      <p>高校の総合探求の授業で取り組んだビジネスアイデアの経験を紹介するページです。</p>
+    </div>
   </div>
+
+  <main>
+    <section id="profile">
+      <h2>プロフィール</h2>
+      <div class="profile-grid">
+        <div class="profile-label">名前</div>
+        <div class="profile-value">Naminoricake</div>
+        <div class="profile-label">学年</div>
+        <div class="profile-value">大学1年生</div>
+      </div>
+    </section>
+
+    <section id="venture-cup">
+      <h2>高校時代の取り組み：ベンチャー・カップCHIBA</h2>
+      <p>
+        高校の総合探求の授業の一環として、ビジネスアイデアを競う発表会「ベンチャー・カップCHIBA」に参加しました。
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="step-title">1. アイデアの提案と中間発表での課題</div>
+          <p>
+            プラスチックの環境問題を解決する「自販機型の機械」というアイデアを発表しました。しかし、中間発表の際には内容が具体的でなかったため、説得力が無いという指摘を受けました。
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="step-title">2. 数値の試算による改善</div>
+          <p>
+            指摘を受け、プランやアイデアの説得力を高めるために、どれくらいのプラスチックが削減できそうか、また飲料の調達にどれくらいお金がかかるかなどの試算を繰り返しました。
+          </p>
+        </div>
+
+        <div class="timeline-item highlight">
+          <div class="step-title">3. 最終発表での結果</div>
+          <p>
+            試算を重ねて具体性を高めた結果、「ベンチャー・カップCHIBA」の「ビジネスアイデア部門」でグランプリを獲得することができました。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="award">
+      <h2>受賞実績</h2>
+      <div class="award-box">
+        <div class="award-title">「ベンチャー・カップCHIBA」ビジネスアイデア部門 グランプリ</div>
+        <p>
+          プラスチックの環境問題を解決する自販機型の機械のビジネスアイデアにおいて、プラスチック削減量や飲料調達コストの試算を重ねて具体性と説得力を高めたことで受賞しました。
+        </p>
+      </div>
+    </section>
+
+    <section id="link" class="video-section">
+      <h2>関連リンク</h2>
+      <p>関連する動画はこちらからご覧いただけます。</p>
+      <a href="https://www.youtube.com/watch?v=aQjo9UAjdK4&t=16s" target="_blank" rel="noopener noreferrer" class="btn-link">
+        関連動画を見る（YouTube）
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; Naminoricake</p>
+  </footer>
+
 </body>
 </html>
